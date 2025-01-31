@@ -1,9 +1,13 @@
-def calcular_promedio(estudiantes):
-    total_notas = sum(estudiantes.values())
-    promedio= total_notas/len(estudiantes)
-    
-    mejor_estudiante = max(estudiantes, key=estudiantes.get)    
-    
-    return "El promedio es: " ,promedio, ". Mejor estudiante " , mejor_estudiante , "con nota: ", estudiantes[mejor_estudiante]
-
-print (calcular_promedio({"Andres": 4.5, "Juan": 3.5, "Maria": 4.0, "Pedro": 3.0}))
+lista = {"Pedro": 9, "Juan": 7, "Ana": 10}
+def marks():
+    promedio = 0
+    maximo_estudiante  = ""
+    mejor_nota = 0
+    for name, nota in lista.items():
+        if nota > mejor_nota:
+            mejor_nota = nota
+            maximo_estudiante = name
+        promedio += nota/len(lista)
+        
+    return "Promedio: ",promedio," Nota máxima: ",mejor_nota,"Mejor estudiante: ",maximo_estudiante
+print (marks())
